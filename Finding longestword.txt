@@ -1,5 +1,8 @@
 Index.html
 
+<div class="p1">
+
+
 <h1>Finding Longest Word</h1>
 <input placeholder="Enter words or Phrases" type="text" name="" id="inp">
 
@@ -13,6 +16,7 @@ Index.html
 <div id="para">
 
 </div>
+</div>
 
 Style.CSS
 
@@ -23,18 +27,17 @@ h1{
 }
 
 #inp{
-    position: relative;
-    left:80px;
+    
     border: none;
     border-radius: 10px;
     height: 30px;
     padding-left: 5px;
     color:  purple;
+    width: 160px;
 }
 
 button{
-    position: relative;
-    left: 80px;
+    
     background-color: darkgoldenrod;
     color: white;
     border: none;
@@ -57,25 +60,31 @@ input::placeholder{
 }
 
 
+.p1{
+    text-align: center;
+}
+
 App.JS
 
 function print(){
 
-var getInp =document.getElementById("inp")
-
-var getPara =document.getElementById("para")
-
-var convert= getInp.value.split(" ")
+  var getInp =document.getElementById("inp")
   
-   longestword=""
+  var getPara =document.getElementById("para")
   
-  for(var i=0;i<convert.length;i++){
-  
-    if(convert[i].length>longestword.length){
-      longestword=convert[i]
+  var convert= getInp.value.split(" ")
+    
+     longestword=""
+    
+    for(var i=0;i<convert.length;i++){
+    
+      if(convert[i].length>longestword.length){
+        longestword=convert[i]
+      }
     }
+    
+   getPara.innerHTML+=`<li>The longest word is: ${longestword}</li>`
+
+   getInp.value=""
+    
   }
-  
- getPara.innerHTML+=`<li>The longest word is: ${longestword}</li>`
-  
-}
